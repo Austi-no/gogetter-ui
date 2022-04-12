@@ -1,0 +1,11 @@
+{
+  "/": {
+    "target": "https://backend20200730075150.azurewebsites.net",
+    "pathRewrite": {
+      "^/": ""
+    },
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  }
+}

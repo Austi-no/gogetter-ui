@@ -1,0 +1,56 @@
+.header-inner {
+  margin-top: 30px;
+  margin-bottom: -20px;
+}
+
+#searchDir .filterinput {
+  border: 1px solid #eaeaea;
+  color: #575757;
+  font-size: 14px;
+  padding: 5px 10px;
+  width: 100%;
+}
+.filterevent {
+  display: inline-block;
+  list-style: outside none none;
+  margin-bottom: 0;
+  padding: 0 25px 20px;
+  width: 100%;
+}
+
+.recommended {
+  display: inline-block;
+  list-style: outside none none;
+  margin-bottom: 0;
+  padding: 0 25px 20px;
+  width: 100%;
+}
+.card {
+  position: relative;
+}
+
+.card .card-badge {
+  position: absolute;
+  top: -10px;
+  left: -30px;
+  padding: 5px;
+  background: blue;
+  color: white;
+  transform: rotate(-20deg);
+}
+
+.card.teaser__sticker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0;
+  line-height: 1;
+}
+
+.sticker-green {
+  background: #1e70a1;
+  color: white;
+  font-weight: 700;
+  padding: 5px;
+}
+

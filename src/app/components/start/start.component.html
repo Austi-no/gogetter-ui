@@ -1,0 +1,226 @@
+<div class="ui inverted dimmer" [class.active]='loading'>
+  <div class="ui small text loader">Loading</div>
+</div>
+
+<section class="breadcumbheader">
+  <div class="page-header">
+    <div class="header-inner">
+      <h2>Welcome to Go<span>Getters</span> </h2>
+      <nav class="breadcrumb">
+        <a href="" class="breadcrumb-item"><i class="fa fa-home"></i></a>
+        <span class="breadcrumb-item active">Dashboard</span>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<div class="">
+  <section>
+    <div class="gap gray-bg">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row merged20" id="page-contents">
+              <div class="col-lg-3">
+                <aside class="sidebar static">
+                  <div class="widget">
+                    <h4 class="widget-title"> Recent Activity</h4>
+                    <ul class="activitiez">
+                      <li>
+                        <div class="activity-meta"> <i> 10 hours Ago</i> <span> <a href="#" title=""> Commented on Video
+                              posted </a> </span>
+                          <h6> by <a href="newsfeed.html"> black demon.</a> </h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="activity-meta"> <i> 30 Days Ago</i> <span> <a href="newsfeed.html" title=""> Posted
+                              your status. “Hello guys, how are you?”</a></span> </div>
+                      </li>
+                      <li>
+                        <div class="activity-meta"> <i>2 Years Ago</i> <span><a href="#" title="">Share a video on her
+                              timeline.</a></span>
+                          <h6>"<a href="newsfeed.html">you are so funny mr.been.</a>"</h6>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="widget">
+                    <h4 class="widget-title">Socials</h4>
+                    <ul class="socials">
+                      <li class="facebook"> <a title="" href="#"><i class='bx bxl-facebook'></i> <span>facebook</span>
+                          <ins>45 likes</ins></a> </li>
+                      <li class="twitter"> <a title="" href="#"><i class='bx bxl-twitter'></i>
+                          <span>twitter</span><ins>25 likes</ins></a> </li>
+                      <li class="google"> <a title="" href="#"><i
+                            class='bx bxl-instagram'></i><span>instagram</span><ins>35 likes</ins></a> </li>
+                    </ul>
+                  </div>
+                  <div class="widget">
+                    <h4 class="widget-title">Shortcuts</h4>
+                    <ul class="naves">
+                      <li> <i class='bx bx-clipboard'></i> <a href="newsfeed.html" title="">News feed</a> </li>
+                      <li> <i class="fa fa-users" aria-hidden="true"></i> <a href="timeline-friends.html"
+                          title="">friends</a> </li>
+                      <li> <i class='bx bxs-envelope-open'></i> <a href="messages.html" title="">Messages</a> </li>
+                      <li> <i class='bx bxs-bell'></i> <a href="notifications.html" title="">Notifications</a> </li>
+                      <li> <i class='bx bxs-share'></i> <a href="people-nearby.html" title="">People Nearby</a> </li>
+                      <li> <i class='bx bx-log-out-circle'></i> <a href="landing.html" title="">Logout</a> </li>
+                    </ul>
+                  </div> <!-- Shortcuts -->
+                  <!-- profile intro widget -->
+                </aside>
+              </div> <!-- sidebar -->
+              <div class="col-lg-6">
+                <div class="central-meta">
+                  <div class="groups"> <span><i class="fa fa-users"></i> Recently Joined</span> </div>
+
+
+
+                  <div class="row mt-4">
+                    <!-- <div class="slider-card owl-carousel"> -->
+                    <div class="col-md-4" *ngFor="let user of userList | slice:0:3;">
+                      <div class="card ui segment">
+
+                        <div class="card-body text-center align-items-center"> <button class="dismiss"> <i
+                              class='bx bx-message-square-x'></i> </button>
+                          <div class="round-image align-items-center d-flex justify-content-center"> <img
+                              class="card-img " style="width: 54px; height: 54px;" src="{{user.profilePicture}}" alt="">
+                          </div>
+                          <div class="">
+                            <div class="" style="width: 100%;"> <span class="person-name">{{user.firstName}}
+                                {{user.lastName}}</span>
+                            </div>
+                            <div class="" style="width: 100%;"> <span class="currentcity">{{user.currentCity}}</span>
+                            </div> <button class="fluid mini primary ui button">Follow</button>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <!-- </div> -->
+
+                  </div>
+                </div>
+                <div class="central-meta">
+                  <div class="groups"> <span><i class="fa fa-calendar"></i> Events</span> </div>
+                  <ul class="nearby-contct">
+                    <li *ngFor="let event of eventList">
+                      <div class="nearly-pepls">
+                        <!-- <div class="row" style="flex-wrap: nowrap;"> -->
+                        <figure>
+                          <a href="" title=""><img class="group-image" src="{{event.imageUrl1}}" alt=""></a> </figure>
+                        <div class="col-md-8" style="padding: 0px;position: unset;">
+                          <div class="row">
+                            <div class="pepl-info" style=" display: inline-flex;">
+                              <div class="col-md-6" style="padding: 0px;position: unset;">
+                                <h4><a href="" title="" (click)="gotoEvent(event.id)">{{event.name}}</a></h4>
+                                <span><i class='bx bx-current-location bx-tada bx-flip-vertical'
+                                    style="font-size: 20px; color: steelblue;"></i> <i
+                                    style="font-size: 16px; color: steelblue;">
+                                    {{event.location}}
+                                  </i>
+                                </span>
+                              </div>
+                              <div class="col-md-3" style="padding: 0px;position: unset; margin-right: 10px;">
+                                <span><em>231 Members</em></span>
+                              </div>
+                              <div class="col-md-3" style="padding: 0px;position: unset;">
+                                <a href="#" title="" class="add-butn" data-ripple=""
+                                  (click)="getAttendId($event)">Attend</a>
+                              </div>
+
+
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div> <!-- centerl meta -->
+              <div class="col-lg-3">
+                <aside class="sidebar static">
+                  <div class="widget">
+                    <h4 class="widget-title">Recommended for You</h4>
+                    <ul class="followers">
+                      <li>
+                        <figure><img src="assets/img/testimonials/testimonials-2.jpg" alt=""></figure>
+                        <div class="friend-meta">
+                          <h4><a href="time-line.html" title="">Kelly Bill</a></h4> <a href="#" title=""
+                            class="underline">Add Friend</a>
+                        </div>
+                      </li>
+                      <li>
+                        <figure><img src="assets/img/testimonials/testimonials-2.jpg" alt=""></figure>
+                        <div class="friend-meta">
+                          <h4><a href="time-line.html" title="">Issabel</a></h4> <a href="#" title=""
+                            class="underline">Add Friend</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div> <!-- who's following -->
+
+                  <!-- Recent News From Blog -->
+                  <div class="widget">
+                    <h4 class="widget-title">Recent Post</h4>
+                    <div class="notification-box" style="padding-left: 10px;
+                    padding-bottom: 10px;">
+                      <ul>
+                        <li>
+                          <figure><img src="assets/img/testimonials/testimonials-2.jpg" alt="" /></figure>
+                          <div class="notifi-meta">
+                            <p>Life of a Star</p>
+                            <span>2 hours ago</span>
+                          </div>
+                          <i class="del fa fa-close"></i>
+                        </li>
+                        <li>
+                          <figure><img src="assets/img/testimonials/testimonials-2.jpg" alt="" /></figure>
+                          <div class="notifi-meta">
+                            <p>The African Ointment.</p>
+                            <span>2 hours ago</span>
+                          </div>
+                          <i class="del fa fa-close"></i>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- end of recent post -->
+                  <div class="widget friend-list stick-widget">
+                    <h4 class="widget-title">Friends</h4>
+                    <div id="searchDir">
+                      <form class="filterform" action="#"><input class="filterinput" type="text"
+                          placeholder="Search Contacts..."></form>
+                    </div>
+                    <ul id="people-list" class="friendz-list">
+                      <li>
+                        <figure> <img src="assets/img/testimonials/testimonials-2.jpg" alt=""> <span
+                            class="status f-online"></span> </figure>
+                        <div class="friendz-meta"> <a href="time-line.html">bucky barnes</a> <i
+                            class='bx bx-current-location'> London</i> </div>
+                      </li>
+                      <li>
+                        <figure> <img src="assets/img/testimonials/testimonials-2.jpg" alt=""> <span
+                            class="status f-away"></span> </figure>
+                        <div class="friendz-meta"> <a href="time-line.html">Sarah Loren</a> <i
+                            class='bx bx-current-location'> London</i> </div>
+                      </li>
+                      <li>
+                        <figure> <img src="assets/img/testimonials/testimonials-2.jpg" alt=""> <span
+                            class="status f-off"></span> </figure>
+                        <div class="friendz-meta"> <a href="time-line.html">jason borne</a> <i
+                            class='bx bx-current-location'> London</i> </div>
+                      </li>
+                    </ul>
+                  </div> <!-- friends list sidebar -->
+                </aside>
+              </div> <!-- sidebar -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

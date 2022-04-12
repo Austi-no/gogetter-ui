@@ -1,0 +1,41 @@
+/* .nearly-pepls > figure img {
+  min-width: 40px !important;
+  max-width: 40px !important;
+  width: 40px !important;
+}
+
+.nearly-pepls {
+  display: inline-flex !important;
+  width: 100% !important;
+}
+
+.nearly-pepls > figure img {
+  display: inline-flex !important;
+  margin-bottom: 0 !important;
+  max-width: 60px !important;
+  min-width: 60px !important;
+  vertical-align: middle !important;
+  width: 60px !important;
+} */
+
+.col-md-8,
+.col-md-4,
+.col-lg-8,
+.col-lg-4,
+.col-sm-8,
+.col-sm-4,
+.col-xl-8,
+.col-xl-4 {
+  padding-right: 0px !important;
+  position: none !important;
+}
+
+@media screen and (max-width: 450px) and (min-width: 200px) {
+  .pepl-info {
+    display: inline-block !important;
+  }
+}
+.header-inner {
+  margin-top: 30px;
+  margin-bottom: -20px;
+}

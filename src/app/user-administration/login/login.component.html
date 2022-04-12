@@ -1,0 +1,68 @@
+<app-header></app-header>
+
+<div class="content content-fixed content-auth">
+  <div class="container">
+    <div class="media align-items-stretch justify-content-center ht-100p pos-relative">
+      <div class="media-body align-items-center d-none d-lg-flex">
+        <div class="mx-wd-600">
+          <img src="assets/img/img15.png" class="img-fluid" alt="">
+        </div>
+        <div class="pos-absolute b-0 l-0 tx-12 tx-center">
+
+        </div>
+      </div><!-- media-body -->
+
+      <!-- Default form login -->
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="text-center border border-light p-5">
+
+        <p class="h4 mb-4">Sign in</p>
+
+        <div *ngIf="isNotLoggedIn" class="alert alert-danger" role="alert">
+          Login Not Successful
+        </div>
+
+        <div *ngIf="isLoggedIn" class="alert alert-success" role="alert">
+          {{outputMessage}}
+        </div>
+
+        <!-- Email -->
+        <input type="email" formControlName="email" class="form-control mb-4" placeholder="E-mail">
+
+        <!-- Password -->
+        <input type="password" formControlName="password" class="form-control mb-4" placeholder="Password">
+
+        <div class="d-flex justify-content-around">
+          <div class="mb-3">
+            <!-- Remember me -->
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+            </div>
+          </div>
+          <div>
+            <!-- Forgot password -->
+            <a href="#">Forgot password?</a>
+          </div>
+        </div>
+
+        <button class="btn btn-brand-02 btn-block mb-3" type="submit">
+          <span *ngIf="submitted" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Sign In
+        </button>
+
+
+        <!-- Register -->
+        <p>Not a member?
+          <a (click)="gotoRegister()" style="color: blue;">Register</a>
+        </p>
+
+
+      </form>
+
+
+    </div><!-- media -->
+  </div><!-- container -->
+</div>
+
+<app-footer></app-footer>

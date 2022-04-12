@@ -1,0 +1,75 @@
+<header class="navbar navbar-header navbar-header-fixed">
+  <a id="mainMenuOpen" class="burger-menu"><i data-feather="menu"></i></a>
+  <div class="navbar-brand">
+    <a class="df-logo">Go<span>Getters</span></a>
+  </div><!-- navbar-brand -->
+  <div id="navbarMenu" class="navbar-menu-wrapper">
+    <div class="navbar-menu-header">
+      <a routerLink="/" class="df-logo">Go<span>Getters</span></a>
+      <a id="mainMenuClose"><i data-feather="x"></i></a>
+    </div><!-- navbar-menu-header -->
+    <ul class="nav navbar-menu">
+      <li class="nav-label pd-l-20 pd-lg-l-25 d-lg-none">Main Navigation</li>
+
+      <li class="nav-item"><a [routerLink]="'/dashboard/start'" class="nav-link"><i class="fas fa-flag mr-1"></i>
+          Start</a></li>
+      <li class="nav-item"><a [routerLink]="'/dashboard/members'" class="nav-link"><i
+            class="fa fa-user mr-1"></i>Members</a></li>
+      <li class="nav-item"><a [routerLink]="'/dashboard/forum'" class="nav-link"><i
+            class="fas fa-comments mr-1"></i>Forum</a></li>
+      <li class="nav-item"><a [routerLink]="'/dashboard/guide'" class="nav-link"><i
+            class="fa fa-book mr-1"></i>Guide</a></li>
+      <li class="nav-item"><a [routerLink]="'/dashboard/events'" class="nav-link"><i
+            class="fa fa-calendar mr-1"></i>Events</a></li>
+      <!-- <li class="nav-item"><a [routerLink]="'/dashboard/groups'" class="nav-link"><i class="fas fa-users mr-1"></i>Groups</a></li> -->
+
+
+    </ul>
+  </div><!-- navbar-menu-wrapper -->
+  <div class="navbar-right">
+    <a id="navbarSearch" href="#" class="search-link"><i data-feather="search"></i></a>
+
+    <div class="dropdown dropdown-profile">
+      <a href="#" class="dropdown-link" data-toggle="dropdown" data-display="static">
+        <div class="avatar avatar-sm"><img src="assets/img/img1.png" class="rounded-circle" alt=""></div>
+      </a><!-- dropdown-link -->
+      <div class="dropdown-menu dropdown-menu-right tx-13">
+        <div class="avatar avatar-lg mg-b-15"><img src="assets/img/img1.png" class="rounded-circle" alt=""></div>
+        <a class="dropdown-item"><i data-feather="edit-3"></i> Edit Profile</a>
+        <a class="dropdown-item"><i data-feather="user"></i> View Profile</a>
+        <div class="dropdown-divider"></div>
+
+        <a (click)="logout()" class="dropdown-item"><i data-feather="log-out"></i>Sign Out</a>
+      </div><!-- dropdown-menu -->
+    </div><!-- dropdown -->
+  </div><!-- navbar-right -->
+  <div class="navbar-search">
+    <div class="navbar-search-header">
+      <input type="search" class="form-control" placeholder="Type and hit enter to search...">
+      <button class="btn"><i data-feather="search"></i></button>
+      <a id="navbarSearchClose" class="link-03 mg-l-5 mg-lg-l-10"><i data-feather="x"></i></a>
+    </div><!-- navbar-search-header -->
+    <div class="navbar-search-body">
+      <label class="tx-10 tx-medium tx-uppercase tx-spacing-1 tx-color-03 mg-b-10 d-flex align-items-center">Recent
+        Searches</label>
+      <ul class="list-unstyled">
+        <li><a>modern dashboard</a></li>
+        <li><a>calendar app</a></li>
+        <li><a>modal examples</a></li>
+        <li><a>avatar</a></li>
+      </ul>
+
+      <hr class="mg-y-30 bd-0">
+
+      <label class="tx-10 tx-medium tx-uppercase tx-spacing-1 tx-color-03 mg-b-10 d-flex align-items-center">Search
+        Suggestions</label>
+
+      <ul class="list-unstyled">
+        <li><a>cryptocurrency</a></li>
+        <li><a>button groups</a></li>
+        <li><a>form elements</a></li>
+        <li><a>contact app</a></li>
+      </ul>
+    </div><!-- navbar-search-body -->
+  </div><!-- navbar-search -->
+</header><!-- navbar -->

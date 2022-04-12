@@ -1,0 +1,224 @@
+<app-header></app-header>
+
+<div class="content content-fixed content-auth">
+  <div class="container">
+    <div class="media align-items-stretch justify-content-center ht-100p">
+      <div class="sign-wrapper mg-lg-r-50 mg-xl-r-60">
+
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="pd-t-20 wd-100p">
+            <h4 class="tx-color-01 mg-b-5">Create New GoGetters Account</h4>
+            <p class="tx-color-03 tx-16 mg-b-40">It's free to signup and only takes a minute.</p>
+
+            <div *ngIf="success" class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Success!</strong> Your Account has been successfully Created
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div *ngIf="failure" class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Failure!</strong> Your Account could not be created
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <!-- <div class="form-row">
+              <div class="form-group col-md-8">
+                <input #file type="file" formControlName="profilePicture" accept='image/*' (change)="previewImage(file.files)" />
+              </div>
+              <div class="form-group col-md-4">
+                <img [src]="imgURL" height="100" *ngIf="imgURL">
+              </div>
+            </div> -->
+
+            <div class="form-group">
+              <!-- <label>Firstname</label> -->
+              <input type="text" class="form-control" formControlName="firstName" placeholder="Enter your firstname"
+                [ngClass]="{ 'is-invalid': f.firstName.touched && f.firstName.errors }">
+
+              <span *ngIf="f.firstName.touched && f.firstName.invalid" class="text-red form-group">
+                <div *ngIf="f.firstName.errors.required">Firstname is required.</div>
+              </span>
+
+            </div>
+
+
+            <div class="form-group">
+              <!-- <label>Lastname</label> -->
+              <input type="text" class="form-control" formControlName="lastName" placeholder="Enter your lastname"
+                [ngClass]="{ 'is-invalid': f.lastName.touched && f.lastName.errors }">
+
+              <span *ngIf="f.lastName.touched && f.lastName.invalid" class="text-red form-group">
+                <div *ngIf="f.lastName.errors.required">LastName is required.</div>
+              </span>
+
+            </div>
+
+            <div class="form-row">
+
+              <div class="form-group col-md-4">
+                <input type="text" class="form-control" formControlName="username" placeholder="Enter your username"
+                  [ngClass]="{ 'is-invalid': f.username.touched && f.username.errors }">
+
+                <span *ngIf="f.username.touched && f.username.invalid" class="text-red form-group">
+                  <div *ngIf="f.username.errors.required">Username is required.</div>
+                </span>
+
+              </div>
+
+              <div class="form-group col-md-4">
+                <!-- <label>Email address</label> -->
+                <input type="email" class="form-control" formControlName="email" placeholder="Enter your email address"
+                  [ngClass]="{ 'is-invalid': f.email.touched && f.email.errors }">
+
+                <span *ngIf="f.email.touched && f.email.invalid" class="text-red form-group">
+                  <div *ngIf="f.email.errors.required">Email is required.</div>
+                  <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+                </span>
+
+              </div>
+
+              <div class="form-group col-md-4">
+                <!-- <label>Email address</label> -->
+                <input type="number" class="form-control" formControlName="phoneNumber" placeholder="Enter your Phone"
+                  [ngClass]="{ 'is-invalid': f.phoneNumber.touched && f.phoneNumber.errors }">
+
+                <span *ngIf="f.phoneNumber.touched && f.phoneNumber.invalid" class="text-red form-group">
+                  <div *ngIf="f.phoneNumber.errors.required">Phone no is required.</div>
+                </span>
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+              <select class="form-control" formControlName="province"
+                [ngClass]="{ 'is-invalid': f.province.touched && f.province.errors }">
+                <option>Province</option>
+                <option>Alberta</option>
+                <option>Montreal</option>
+              </select>
+
+              <span *ngIf="f.province.touched && f.province.invalid" class="text-red form-group">
+                <div *ngIf="f.province.errors.required">Province is required.</div>
+              </span>
+
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" formControlName="bornCity" placeholder="Enter your Born City"
+                  [ngClass]="{ 'is-invalid': f.bornCity.touched && f.bornCity.errors }">
+
+                <span *ngIf="f.bornCity.touched && f.bornCity.invalid" class="text-red form-group">
+                  <div *ngIf="f.bornCity.errors.required">Born City is required.</div>
+                </span>
+
+              </div>
+
+              <div class="form-group col-md-6">
+                <!-- <label>Email address</label> -->
+                <input type="text" class="form-control" formControlName="currentCity"
+                  placeholder="Enter your Current City"
+                  [ngClass]="{ 'is-invalid': f.currentCity.touched && f.currentCity.errors }">
+
+                <span *ngIf="f.currentCity.touched && f.currentCity.invalid" class="text-red form-group">
+                  <div *ngIf="f.currentCity.errors.required">Current City is required.</div>
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <select class="form-control" formControlName="gender"
+                  [ngClass]="{ 'is-invalid': f.gender.touched && f.gender.errors }">
+                  <option>Select Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+
+                <span *ngIf="f.gender.touched && f.gender.invalid" class="text-red form-group">
+                  <div *ngIf="f.gender.errors.required">Current City is required.</div>
+                </span>
+
+
+
+              </div>
+              <div class="form-group col-md-6">
+                <!-- <label>Email address</label> -->
+                <input type="date" class="form-control" formControlName="dob" placeholder="DOB"
+                  [ngClass]="{ 'is-invalid': f.dob.touched && f.dob.errors }">
+
+                <span *ngIf="f.dob.touched && f.dob.invalid" class="text-red form-group">
+                  <div *ngIf="f.dob.errors.required">Date of Birth is required.</div>
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <div class="d-flex justify-content-between mg-b-5">
+                </div>
+                <input type="password" class="form-control" formControlName="password" placeholder="Enter your password"
+                  [ngClass]="{ 'is-invalid': f.password.touched && f.password.errors }">
+
+                <span *ngIf="f.password.touched && f.password.invalid" class="text-red">
+                  <div *ngIf="f.password.errors.required">Password is required.</div>
+                  <div *ngIf="f.password.errors.invalidPassword">Minimum of 8 Characters, 1 Uppercase and 1 Lowercase
+                    and a number</div>
+                </span>
+
+              </div>
+
+              <div class="form-group col-md-6">
+                <div class="d-flex justify-content-between mg-b-5">
+                </div>
+                <input type="password" class="form-control" formControlName="confirmPassword"
+                  placeholder="Confirm Password"
+                  [ngClass]="{ 'is-invalid': f.confirmPassword.touched && f.confirmPassword.errors }">
+
+                <span *ngIf="f.confirmPassword.touched && f.confirmPassword.errors" class="text-red">
+                  <div *ngIf="f.confirmPassword.errors.required">Confirm Password required</div>
+                  <div *ngIf="f.confirmPassword.errors.passwordMismatch">Password and Confirm Password must match.</div>
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="form-group tx-12">
+              By clicking <strong>Create an account</strong> below, you agree to our terms of service and privacy
+              statement.
+            </div><!-- form-group -->
+
+            <button class="btn btn-brand-02 btn-block mb-3" type="submit">
+              <span *ngIf="submitted" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Create Account
+            </button>
+
+            <div class="tx-13 mg-t-20 tx-center">Already have an account? <a (click)="gotoSignIn()">Sign In</a></div>
+          </div>
+        </form>
+
+      </div><!-- sign-wrapper -->
+      <div class="media-body pd-y-30 pd-lg-x-50 pd-xl-x-60 align-items-center d-none d-lg-flex pos-relative">
+        <div class="mx-lg-wd-500 mx-xl-wd-550">
+          <img src="assets/img/img16.png" class="img-fluid" alt="">
+        </div>
+        <div class="pos-absolute b-0 r-0 tx-12">
+          <a target="_blank"> </a>
+        </div>
+      </div><!-- media-body -->
+    </div><!-- media -->
+  </div><!-- container -->
+</div>
+
+<app-footer></app-footer>
